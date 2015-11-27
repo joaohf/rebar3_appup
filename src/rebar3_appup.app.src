@@ -1,0 +1,16 @@
+{application, 'rebar3_appup',
+ [{description, "Plugin to support .appup.src files"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {'rebar3_appup_app', []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {contributors, []},
+  {licenses, ["Apache-2.0"]},
+  {links, []}
+ ]}.
