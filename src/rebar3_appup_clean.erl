@@ -36,12 +36,8 @@ do(State) ->
     {ok, State}.
 
 -spec format_error(any()) -> iolist().
-format_error({failed_writing_target, [TargetFile, Reason]}) ->
-    io_lib:format("Failed writing to target file ~s due to ~s", [TargetFile, Reason]);
-format_error({failed_to_compile, [SourceFile, Reason]}) ->
-    io_lib:format("Failed to compile ~s: ~p~n", [SourceFile, Reason]);
-format_error({failed_to_compile_not_appup, [SourceFile]}) ->
-    io_lib:format("Failed to compile ~s, not an appup~n", [SourceFile]).
+format_error(Reason) ->
+    io_lib:format(Reason).
 
 do_clean(TargetFile) ->
     ec_file:remove(TargetFile, []).
